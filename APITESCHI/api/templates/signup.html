@@ -1,0 +1,62 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>HASH TECHIE OFFICIAL</title>
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+
+                {{error}} <!--Mostrar si hay un error-->
+
+
+                <form action="/signup/"  method="POST">
+
+                     <!--Creacion del TOKEN el cual validara nuestro formulario-->
+                     {% csrf_token %} 
+
+                    <h2>Registro de usuario</h2>
+                     <!--Usuarios 1-->
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" id="id_username">
+                        <label for="">Usuario</label>
+                    </div>
+                    <!--Paswword 1-->
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1">
+                        <label for="">Contraseña</label>
+                    </div>
+                    <!--Paswword 2-->
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2">
+                        <label for="">Confirmar Contraseña</label>
+                    </div>
+
+                    <div class="forget">
+                        <label for=""><a href="#">Olvide la contraseña</a></label>
+                      
+                    </div>
+
+                    <button>Resgitrar</button>
+
+                    <div class="register">
+                        <p>¿Ya tienes una cuenta? <a href="#">Inicar sesión</a></p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
