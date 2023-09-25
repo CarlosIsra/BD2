@@ -1,0 +1,36 @@
+python -m venv venv
+venv/Scripts/Activate.ps1
+pip install django==3.2.4 
+python -m pip install --upgrade pip
+django-admin startproject APITESCHI 
+PIP install djangorestframework
+cd .\APITESCHI\
+python manage.py startapp api
+	ir a SETTINGS.PY , dirijirse a INSTALLED_APPS poner: 'api', 'rest_framework'
+python manage.py makemigrations
+python manage.py migrate    
+pip install django==3.2.4      
+
+python manage.py makemigrations
+python manage.py migrate
+	
+	ir a DOCUEMNTOS y poner la segunda opncion de GIT HUD
+		git init
+		git add .
+		git commit -m "Mi primer Comit"
+		git branch -M main
+		git remote add origin https://github.com/CarlosIsra/BD1_Clientes.git
+		git push -u origin main
+			
+			Crear dtres carpetas en api, una  llamada 'templates' y las ultimas dos 'static'/'css'
+
+python manage.py runserver
+
+
+///////
+Para inicar el servidor se necesitan los siguientes comandos
+//////
+
+venv/Scripts/Activate.ps1
+cd .\APITESCHI\
+python manage.py runserver

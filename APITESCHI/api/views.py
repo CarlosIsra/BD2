@@ -5,6 +5,11 @@ from django.contrib.auth.models import User #Registrar usuarios en django
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 # Create your views here.
+def codigoXML(request):
+    return render(request,'codigoXML.html')
+
+
+
 
 #Creacion del Signup
 def home(request):
