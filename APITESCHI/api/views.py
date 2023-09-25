@@ -4,6 +4,20 @@ from django.contrib.auth.forms import AuthenticationForm # Comprobar si el Usuar
 from django.contrib.auth.models import User #Registrar usuarios en django
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
+from django.core.mail import send_mail
+from django.db import IntegrityError
+from django.core.mail import EmailMessage
+
+
+
+
+
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
+
+
 # Create your views here.
 def codigoXML(request):
     return render(request,'codigoXML.html')
@@ -31,7 +45,22 @@ def signup(request):
                 user =  User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
                 user.save()
                 login(request, user)
+                
+                
+                subject = 'correo de registro de usuario'
+                mesage = 'agracias por registrarte'
+                from_email = 'CarlosBolañosCastro@gmail.com'
+                recipient_list = ['ci70232@gmail.com']
+                send_mail(subject, mesage, from_email, recipient_list)
+                
+                
+                
+                
                 return redirect('plantilla')
+            
+            
+            #ENVIO DEL CORREO ELECTRONICO
+                
                 
                
             
