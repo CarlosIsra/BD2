@@ -4,17 +4,14 @@ from django.contrib.auth.forms import AuthenticationForm # Comprobar si el Usuar
 from django.contrib.auth.models import User #Registrar usuarios en django
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
+
+#Enviar un correo
 from django.core.mail import send_mail
 from django.db import IntegrityError
 from django.core.mail import EmailMessage
-
-
-
-
-
-from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+
 
 
 
@@ -47,19 +44,36 @@ def signup(request):
                 login(request, user)
                 
                 
-                subject = 'correo de registro de usuario'
-                mesage = 'agracias por registrarte'
+                #ENVIO DEL CORREO ELECTRONICO
+                
+                # Genera las credenciales de acceso (esto es un ejemplo, debes generar las credenciales de manera adecuada).
+                usuario = request.POST['username']
+                contraseña = request.POST['password1']
+
+                    # Contenido HTML para el correo
+                html_message = render_to_string('bienvenida.html', {'usuario': usuario, 'contraseña': contraseña})
+                    # Crea un mensaje de texto plano para el correo (opcional)
+                plain_message = strip_tags(html_message)
+
+                    # Asunto del correo
+                subject = '¡Bienvenido a nuestra aplicación!'
+
+                    # Dirección de correo remitente
                 from_email = 'CarlosBolañosCastro@gmail.com'
+
+                    # Lista de destinatarios
                 recipient_list = ['ci70232@gmail.com']
-                send_mail(subject, mesage, from_email, recipient_list)
-                
-                
-                
+
+                    # Envía el correo
+                send_mail(subject, plain_message, from_email, recipient_list, html_message=html_message)
+
+                    
+            
                 
                 return redirect('plantilla')
             
             
-            #ENVIO DEL CORREO ELECTRONICO
+          
                 
                 
                
@@ -102,7 +116,14 @@ def signin(request):
               
             
         
+  ##ENVIO DE EL CORREO ELECTRONICO
   
+
+
+
+
+def bienvenida(request):
+    return render(request,'bienvenida.html')
   
             
             
