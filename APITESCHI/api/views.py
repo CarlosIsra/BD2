@@ -39,9 +39,16 @@ def signup(request):
         if request.POST['password1'] == request.POST['password2']:
             try:
                 
-                user =  User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
+                user =  User.objects.create_user( last_name=request.POST['last_name'], first_name=request.POST['first_name']
+                                                 ,username=request.POST['username'],email=request.POST['email']
+                                                 ,password=request.POST['password1'])
                 user.save()
                 login(request, user)
+                
+                
+               
+               
+                
                 
                 
                 #ENVIO DEL CORREO ELECTRONICO
@@ -89,6 +96,12 @@ def signup(request):
             'form': UserCreationForm,
             "error": 'Las contraseñas no son iguales'
               })
+   
+   
+   
+   
+   
+   
    
 #Creacion de la plantilla cuando se registren.          
 def plantilla(request):
