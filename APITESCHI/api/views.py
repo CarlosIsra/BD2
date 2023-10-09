@@ -54,22 +54,25 @@ def signup(request):
                 #ENVIO DEL CORREO ELECTRONICO
                 
                 # Genera las credenciales de acceso (esto es un ejemplo, debes generar las credenciales de manera adecuada).
+                last_name=request.POST['last_name']
+                first_name=request.POST['first_name']
+                email=request.POST['email']
                 usuario = request.POST['username']
                 contraseña = request.POST['password1']
 
                     # Contenido HTML para el correo
-                html_message = render_to_string('bienvenida.html', {'usuario': usuario, 'contraseña': contraseña})
+                html_message = render_to_string('Correo.html', {'usuario': usuario, 'contraseña': contraseña, 'last_name': last_name,'first_name': first_name,'email': email })
                     # Crea un mensaje de texto plano para el correo (opcional)
                 plain_message = strip_tags(html_message)
 
                     # Asunto del correo
-                subject = '¡Bienvenido a nuestra aplicación!'
+                subject = '¡Bienvenido a nuestra paguina!'
 
                     # Dirección de correo remitente
                 from_email = 'CarlosBolañosCastro@gmail.com'
 
                     # Lista de destinatarios
-                recipient_list = ['ci70232@gmail.com']
+                recipient_list = [email]
 
                     # Envía el correo
                 send_mail(subject, plain_message, from_email, recipient_list, html_message=html_message)
@@ -138,7 +141,11 @@ def signin(request):
 def bienvenida(request):
     return render(request,'bienvenida.html')
   
+def Correo(request):
+    return render(request,'Correo.html')
+  
             
+                      
             
        
         
