@@ -1,18 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
-    <link rel="stylesheet" href="{% static 'css/Tienda/Tienda.css' %}">   
+    <link rel="stylesheet" href="{% static 'css/Tienda/Tienda.css' %}"> 
     <link rel="stylesheet" href="{% static 'css/Tienda/bulma.min.css' %}"> 
     <link rel="stylesheet" href="{% static 'css/Tienda/material-design-iconic-font.css' %}"> 
-
     <title>Document</title>
 </head>
 
@@ -22,10 +18,10 @@
         <nav class="navbar-top">
             <ul class="navbar-top-ul">
                 <li class="navbar-top-item">
-                    <a href="{% url 'signup' %}" class="navbar-top-links">Registro</a>
+                    <a href="login.html" class="navbar-top-links">Registro</a>
                 </li>
                 <li class="navbar-top-item">
-                    <a href="{% url 'signin' %}" class="navbar-top-links">Iniciar sesión</a>
+                    <a href="login.html" class="navbar-top-links">Iniciar sesión</a>
                 </li>
                 <li class="navbar-top-item">
                     <a href="#" class="navbar-top-links">
@@ -41,7 +37,7 @@
                 <a class="navbar-mobile-link has-text-white" href="index.html">Avenue Fashion</a>
                 <a class="navbar-mobile-link has-text-white" href="#"><i class="zmdi zmdi-shopping-cart"></i> Vacio</a>
             </header>
-            <nav class="nav-menu" id="mySidenav">
+            <nav class="nav-menu --nav-dark-light" id="mySidenav">
                 <form class="form-group " action="#">
                     <div class="form-group-container">
                         <span class="form-group-icon"><i class="zmdi zmdi-search"></i></span>
@@ -49,10 +45,11 @@
                     </div>
                 </form>
 
-                <a class="is-hidden-mobile brand is-uppercase has-text-weight-bold has-text-dark" href="{% url 'home' %}">Avenue Fashion</a>
+                <a class="is-hidden-mobile brand is-uppercase has-text-weight-bold has-text-dark" href="{% url 'home' %}">Avenue
+                    Fashion</a>
                 <ul class="nav-menu-ul">
                     <li class="nav-menu-item" id="men">
-                        <a class="nav-menu-link link-submenu active" href="#">Hombre <i
+                        <a class="nav-menu-link link-submenu" href="#">Hombre <i
                                 class="zmdi zmdi-chevron-down"></i></a>
                         <div class="container-sub-menu">
                             <ul class="sub-menu-ul">
@@ -91,7 +88,7 @@
                     </li>
                     <li class="nav-menu-item" id="women">
                         <a href="#" class="nav-menu-link link-submenu">Mujer <i class="zmdi zmdi-chevron-down"></i> </a>
-                        <div class="container-sub-menu"> 
+                        <div class="container-sub-menu">
 
                             <ul class="sub-menu-ul">
                                 <li class="nav-menu-item ">
@@ -125,9 +122,9 @@
                                 <h1 class="ads-h1">Ofertas de Verano</h1>
                                 <h2 class="ads-h2">Desde el 50% de descuento</h2>
                             </div>
-                        </div> 
+                        </div>
                     </li>
-                    <li class="nav-menu-item"><a href="{% url 'brand' %}" class="nav-menu-link">La Marca</a></li>
+                    <li class="nav-menu-item"><a href="{% url 'brand' %}" class="nav-menu-link active">La Marca</a></li>
                     <li class="nav-menu-item"><a href="{% url 'lookbook' %}" class="nav-menu-link">Look Book</a></li>
                     <li class="nav-menu-item"><a href="{% url 'signup' %}" class="nav-menu-link">Registro</a></li>
                     <li class="nav-menu-item"><a href="{% url 'signin' %}" class="nav-menu-link">Iniciar Sesión</a></li>
@@ -136,229 +133,151 @@
         </nav>
     </header>
     <!-- Banner -->
-    <div class="banner banner-cover">
+    <div class="banner banner-second">
         <div class="banner-container ">
-            <h1 class="title-cover">Moda Pizada</h1>
-            <a class="btn btn-default">Comprar colección para Hombres</a>
+            <h1>La marca</h1>
+            <h2>Slogan de la compañia</h2>
         </div>
     </div>
 
-    <!-- Barra de navegacion secundaria -->
     <div class="container">
         <nav class="nav">
-            <a class="nav-item active has-text-weight-semibold" href="#">Popular</a>
-            <a class="nav-item has-text-weight-semibold" href="#">Novedades</a>
-            <a class="nav-item has-text-weight-semibold" href="#">Más vendidos</a>
-            <a class="nav-item has-text-weight-semibold" href="#">Ofertas</a>
-            <a class="nav-item has-text-weight-semibold" href="#">Muy pronto</a>
+            <a class="nav-item --active" href="#">Lo último</a>
+            <a class="nav-item" href="#">Más Gustado</a>
+            <a class="nav-item" href="#">Más vendidos</a>
+            <a class="nav-item" href="#">Más baratos</a>
+            <a class="nav-item" href="#">Más caro</a>
         </nav>
     </div>
-    <!-- Sección de fotografías -->
     <div class="container">
-        <div class="columns is-multiline">
-            <div class="column is-full-mobile">
-                <div class="columns is-centered is-mobile is-multiline">
-                    <!-- 1 Sección de fotografías -->
-                    <div class="column is-half column-full">
-                        <div class="card">
-                            <span class="price">$89.99</span>
-                            <img src="{% static 'css/img/item-1.png' %}" alt="">
-                            <div class="card-info">
-                                <h4 class="has-text-black has-text-centered has-text-weight-bold"> Women's Burnt Orenge
-                                    Casual TEE $89.99 </h4>
-                                <p class="has-text-centered">Classic casual t-shirt for women on the move.
-                                    100%
-                                    cotton.</p>
-                                <div class="card-buttons">
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-shopping-cart"></i></a>
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-favorite-outline"></i></a>
-                                    <a href="producto.html" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-eye"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column column-full is-half">
-                        <div class="card">
-                            <span class="price">$47.50</span>
-                            <img src="{% static 'css/img/item-2.png' %}" alt="">
-                            <div class="card-info">
-                                <h4 class="has-text-black has-text-centered has-text-weight-bold"> Women's Burnt Orenge
-                                    Casual TEE $47.50 </h4>
-                                <p class="has-text-centered">Classic casual t-shirt for women on the move.
-                                    100%
-                                    cotton.</p>
-                                <div class="card-buttons">
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-shopping-cart"></i></a>
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-favorite-outline"></i></a>
-                                    <a href="producto.html" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-eye"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="columns is-mobile is-multiline">
+            <div class="column is-half-mobile is-one-quarter-desktop">
+                <div class="card ">
+                    <span class="price"> <sup>REF</sup> M1</span>
+                    <img src="{% static 'css/img/item-1.png' %}" alt="">
+                    <div class="card-simple-options">
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-favorite"></i>
+                        </a>
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-info"></i>
+                        </a>
 
-                    <div class="column is-full">
-                        <div class="card">
-                            <span class="price">$65.95</span>
-                            
-                                <img src="{% static 'css/img/item-3.png' %}" alt="">
-                            <div class="card-info">
-                                <h4 class="has-text-black has-text-centered has-text-weight-bold"> Women's Burnt Orenge
-                                    Casual TEE $65.95 </h4>
-                                <p class="has-text-centered">Classic casual t-shirt for women on the move.
-                                    100%
-                                    cotton.</p>
-                                <div class="card-buttons">
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-shopping-cart"></i></a>
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-favorite-outline"></i></a>
-                                    <a href="producto.html" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-eye"></i></a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Segunda sección de fotografías -->
-            <div class="column is-half is-full-mobile">
-                <div class="columns is-mobile is-multiline">
-                    <div class="column is-full">
-                        <div class="card">
-                            <span class="price"><strike>$107</strike> $89.99</span>
-                                <img src="{% static 'css/img/item-4.png' %}" alt="">
-                            <div class="card-info">
-                                <h4 class="has-text-black has-text-centered has-text-weight-bold"> Women's Burnt Orenge
-                                    Casual TEE $89.99 </h4>
-                                <p class="has-text-centered">Classic casual t-shirt for women on the move.
-                                    100%
-                                    cotton.</p>
-                                <div class="card-buttons">
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-shopping-cart"></i></a>
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-favorite-outline"></i></a>
-                                    <a href="producto.html" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-eye"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column column-full is-half">
-                        <div class="card">
-                            <span class="price">$29.99</span>
-                            <img src="{% static 'css/img/item-5.png' %}" alt="">
-                            <div class="card-info">
-                                <h4 class="has-text-black has-text-centered has-text-weight-bold"> Women's Burnt Orenge
-                                    Casual TEE $29.99 </h4>
-                                <p class="has-text-centered">Classic casual t-shirt for women on the move.
-                                    100%
-                                    cotton.</p>
-                                <div class="card-buttons">
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-shopping-cart"></i></a>
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-favorite-outline"></i></a>
-                                    <a href="producto.html" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-eye"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column column-full is-half">
-                        <div class="card">
-                            <span class="price">$34.79</span>
-                            <img src="{% static 'css/img/item-6.png' %}" alt="">
+            <div class="column is-half-mobile is-one-quarter-desktop">
+                <div class="card ">
+                    <span class="price"> <sup>REF</sup> M1</span>
+                    <img src="{% static 'css/img/item-2.png' %}" alt="">
+                    <div class="card-simple-options">
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-favorite"></i>
+                        </a>
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-info"></i>
+                        </a>
 
-                            
+                    </div>
+                </div>
+            </div>
+            <div class="column is-half-mobile is-one-quarter-desktop">
+                <div class="card ">
+                    <span class="price"> <sup>REF</sup> M1</span>
+                    <img src="{% static 'css/img/item-3.png' %}" alt="">
+                    <div class="card-simple-options">
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-favorite"></i>
+                        </a>
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-info"></i>
+                        </a>
 
-                            <div class="card-info">
-                                <h4 class="has-text-black has-text-centered has-text-weight-bold"> Women's Burnt Orenge
-                                    Casual TEE $34.79 </h4>
-                                <p class="has-text-centered">Classic casual t-shirt for women on the move.
-                                    100%
-                                    cotton.</p>
-                                <div class="card-buttons">
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-shopping-cart"></i></a>
-                                    <a href="#" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-favorite-outline"></i></a>
-                                    <a href="producto.html" class="btn btn--mini-rounded"><i
-                                            class="zmdi zmdi-eye"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-half-mobile is-one-quarter-desktop">
+                <div class="card ">
+                    <span class="price"> <sup>REF</sup> M1</span>
+                    <img src="{% static 'css/img/item-4.png' %}" alt="">
+                    <div class="card-simple-options">
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-favorite"></i>
+                        </a>
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-info"></i>
+                        </a>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container container-full">
-    <div class="columns is-centered is-multiline">
-        <div class="column is-full">
-            <div class="separator"></div>
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop column-half">
-            <div class="card card-second">
-                <img class="card-second-image" src="{% static 'css/img/lookbook-men.png' %}"alt="">
+    <div class="container">
+        <div class="columns is-mobile is-multiline">
+            <div class="column is-half-mobile is-one-quarter-desktop">
+                <div class="card ">
+                    <span class="price"> <sup>REF</sup> M1</span>
+                    <img src="{% static 'css/img/item-5.png' %}" alt="">
+                    <div class="card-simple-options">
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-favorite"></i>
+                        </a>
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-info"></i>
+                        </a>
 
-                
-                <div class="card-second-body --text-right">
-                    <h1 class="has-text-right is-size-4 has-text-weight-semibold-bold">Catálogo para hombres</h1>
-                    <p class="has-text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Voluptatum labore quae reiciendis, corrupti debitis dicta
-                    </p>
-                    <div>
-                        <a href="#" class="btn btn-default is-size-7">Ver ahora</a>
-                    </div>
-                    </p>
-                    
-                    
-                </div>
-            </div>
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop column-half">
-            <div class="card card-second">
-                <img class="card-second-image" src="{% static 'css/img/lookbook-women.png' %}" alt="">
-
-                
-                <div class="card-second-body --text-right">
-                    <h1 class="has-text-right is-size-4 has-text-weight-semibold-bold">Catálogo para hombres</h1>
-                    <p class="has-text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Voluptatum labore quae reiciendis, corrupti debitis dicta
-                    </p>
-                    <div>
-                        <a href="#" class="btn btn-default is-size-7">Ver ahora</a>
                     </div>
                 </div>
             </div>
+            <div class="column is-half-mobile is-one-quarter-desktop">
+                <div class="card ">
+                    <span class="price"> <sup>REF</sup> M1</span>
+                    <img src="{% static 'css/img/item-6.png' %}" alt="">
+                    <div class="card-simple-options">
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-favorite"></i>
+                        </a>
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-info"></i>
+                        </a>
 
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop">
-            <div class="card card-second">
-                <img class="card-second-image" src="{% static 'css/img/lookbook-you.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-half-mobile is-one-quarter-desktop">
+                <div class="card ">
+                    <span class="price"> <sup>REF</sup> M1</span>
+                    <img src="{% static 'css/img/item-7.png' %}" alt="">
+                    <div class="card-simple-options">
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-favorite"></i>
+                        </a>
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-info"></i>
+                        </a>
 
-                
-                <div class="card-second-body --text-right">
-                    <h1 class="has-text-right is-size-4 has-text-weight-semibold-bold">Catálogo para hombres</h1>
-                    <p class="has-text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Voluptatum labore quae reiciendis, corrupti debitis dicta
-                    </p>
-                    <div>
-                        <a href="#" class="btn btn-default is-size-7">Ver ahora</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-half-mobile is-one-quarter-desktop">
+                <div class="card ">
+                    <span class="price"> <sup>REF</sup> M1</span>
+                    <img src="{% static 'css/img/item-1.png' %}" alt="">
+                    <div class="card-simple-options">
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-favorite"></i>
+                        </a>
+                        <a href="" class="btn btn--mini-rounded">
+                            <i class="zmdi zmdi-info"></i>
+                        </a>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="columns is-multiline">
                 <div class="column">
@@ -391,8 +310,8 @@
                         <li class="footer-item">
                             <h3 class="has-text-weight-bold">Tu cuenta</h3>
                         </li>
-                        <li class="footer-item"><a class="footer-link" href="{% url 'signin' %}">Iniciar sesión</a></li>
-                        <li class="footer-item"><a class="footer-link" href="{% url 'signup' %}">Registro</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Iniciar sesión</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Registro</a></li>
                         <li class="footer-item"><a class="footer-link" href="#">Ver carrito </a></li>
                         <li class="footer-item"><a class="footer-link" href="#">Ver catálogo</a></li>
                         <li class="footer-item"><a class="footer-link" href="#">Track an order</a></li>
@@ -433,6 +352,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="footer-bar-top">
             <div class="container">
                 <a class="footer-bar-top-links" href="#">2019 Avenue Fashion</a>
@@ -440,7 +360,6 @@
         </div>
     </footer>
     <script src="{% static 'css/js/main.js' %}"></script>
-
 
 
 </body>

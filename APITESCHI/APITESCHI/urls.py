@@ -29,6 +29,12 @@ urlpatterns = [
     path('signin/', views.signin, name='signin'),
     path('Correo/', views.Correo, name='Correo'),
     
+    path('brand/', views.brand, name='brand'),
+    path('lookbook/', views.lookbook, name='lookbook'),
+    path('producto/', views.producto, name='producto'),
+    
+    
+    
     #Aqui empieza el codigo para restablecer la contraseña
     path('reset_password/', auth_views.PasswordResetView.as_view(template_name="Correo_Recuperacion/password_reset_form.html"), name='password_reset'),
     path('reset_password_send/', auth_views.PasswordResetDoneView.as_view(template_name="Correo_Recuperacion/password_reset_done.html"),name='password_reset_done'),

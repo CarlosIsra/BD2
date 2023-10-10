@@ -19,6 +19,16 @@ from django.utils.html import strip_tags
 def codigoXML(request):
     return render(request,'codigoXML.html')
 
+def brand(request):
+    return render(request,'Tienda_Ropa/brand.html')
+def lookbook(request):
+    return render(request,'Tienda_Ropa/lookbook.html')
+def producto(request):
+    return render(request,'Tienda_Ropa/producto.html')
+
+
+
+
 
 
 
@@ -146,7 +156,9 @@ def Correo(request):
 
 
     
+
     
     
+      
     
    
