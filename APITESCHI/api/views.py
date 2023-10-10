@@ -143,12 +143,8 @@ def bienvenida(request):
   
 def Correo(request):
     return render(request,'Correo.html')
-  
-            
-                      
-            
-       
-        
+
+
     
     
     

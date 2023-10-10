@@ -14,7 +14,10 @@ section{
     background-position: center;
     background-size: cover;
 }
-.form-box{
+
+
+
+.form-box {
     position: relative;
     width: 700px;
     height: 550px;
@@ -25,11 +28,9 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    
-
-
 }
+
+
 
 .form-box-signin{
     position: relative;
