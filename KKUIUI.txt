@@ -35,6 +35,14 @@ venv/Scripts/Activate.ps1
 cd .\APITESCHI\
 python manage.py runserver
 
+////////
+Para poder Activar las politicas de POWERERSHELL es necesario poner los siguientes comandos.
+////////
+Get-ExecutionPolicy
+Set-ExecutionPolicy RemoteSigned
+				PONER LA LETRA "0"
+Get-ExecutionPolicy
+
 ////
 SUPER USER
 /////
