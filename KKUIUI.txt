@@ -34,3 +34,11 @@ Para inicar el servidor se necesitan los siguientes comandos
 venv/Scripts/Activate.ps1
 cd .\APITESCHI\
 python manage.py runserver
+
+////
+SUPER USER
+/////
+
+admin
+admin@123.com	
+admin123
